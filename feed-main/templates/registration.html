@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      
+  
+  background-image: url('https://barbauldagency.com/wp-content/uploads/2017/01/10-signs-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+
+
+    }
+    
+    .container {
+      width: 400px;
+      height:300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #207eea00;
+      border-width: 5px;
+      border-radius: 20px;
+      align-items: center;
+      margin-top:170px;
+      
+    }
+    
+    .container h1,p{
+      text-align: center;
+
+    }
+    
+    .container input[type="text"],
+    .container input[type="password"],
+    .container input[type="email"] {
+      width: 95%;
+      padding: 10px;
+      margin-bottom: 10px;
+      row-gap: 10px;
+      border: 1px solid #cccccc81;
+      border-radius: 4px;
+    color:black
+
+    }
+    
+    .container input[type="submit"] {
+      width: 50%;
+      padding: 10px 20px;
+      background-color: #e8e4dfad;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: medium;
+      text-align: center;
+      margin-left: 90px;
+    }
+    
+    .container input[type="submit"]:hover {
+      background-color: #7a540ed7;
+      align-items: center;
+    
+    }
+    
+    p{
+        color:rgba(255, 81, 0, 0.858);
+        font-size:large;
+    }
+    a{
+        color:white;
+    }
+  
+   
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <center><b>{{message}}</b></center>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<body>
+    <div class="container">
+        <div class="form">
+          <div class="login">
+            <div class="login-header">
+              <h1>SIGN UP</h1>
+              <p>Please enter your credentials to Register.</p>
+            </div>
+          </div>
+          <form  method="POST">
+            <input type="text" placeholder="username" name="username" required/>
+            <input type="email" placeholder="email" name="email" required/>
+            <input type="password" placeholder="password" name="password" required/>
+            <input type="submit" value="Register">
+            <p class="message">Already have an account? <a href="{{url_for('login')}}">login</a></p>
+          </form>
+        </div>
+      </div>
+</body>
+</html>
+

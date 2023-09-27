@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Feedback Form</title>
+  <style>
+    body {
+      font-family: cursive;
+      background-image: url('https://i.pinimg.com/originals/33/73/1c/33731ce4ff6242bca44318a237d4f54d.jpg')  ;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
+    .container {
+      margin-left: 470px;
+      max-width: 500px;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    textarea {
+      width: 90%;
+      padding: 10px;
+      height: 10px;
+    }
+    
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <center><b>{{message}}</b></center>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<body>
+  
+  <h1><u>College Feedback Form</u></h1>
+  <div class="container">
+    
+    <form action="#" method="post">
+      
+      <div class="form-group">
+        <label for="name">Username :</label>
+    <input type="text" style="width: 100px; height:7px ;" id="name" name="name" placeholder="--Name--" readonly>
+      </div>
+  <div class="form-group" >
+     <label for="email"> Email:<br></label>
+      <input type="email" style="width: 150px; height:25px ;" id="email" name="email" placeholder="--Email--" readonly>
+      </div>
+      <div class="form-group">
+
+        <label for="question1">1. How would you rate the overall quality of the academic &nbsp;&nbsp;&nbsp;programs and courses offered at our college?</label>
+        <br><input type="text" id="question1" name="question1" placeholder="out of 5"  readonly>
+      </div>
+      <div class="form-group">
+        <label for="question2">2. Are you satisfied with the support and guidance provided by &nbsp;&nbsp;&nbsp;faculty members in your chosen field of study?</label>
+        <input type="radio" id="question2" name="question2"  readonly>Yes
+        <input type="radio" id="question2" name="question2"  readonly>No
+
+      </div>
+      <div class="form-group">
+        <label for="question3">3. How would you rate the availability and accessibility of &nbsp;&nbsp;&nbsp;resources such as libraries, labs, and study spaces?</label>
+        <br><input type="text" id="question3" name="question3"   placeholder="out of 5"  readonly>
+      </div>
+      <div class="form-group">
+        <label for="question4">4. Did you find the college's career services and internships &nbsp;&nbsp;&nbsp;opportunities helpful in preparing for your future career?</label>
+        <input type="radio" id="question4" name="question4"  readonly>Yes
+        <input type="radio" id="question4" name="question4"  readonly>No
+      </div>
+      <div class="form-group">
+        <label for="question5">5. How would you rate the effectiveness of the college's &nbsp;&nbsp;&nbsp;academic advising and support services?</label>
+        <br><input type="text" id="question5" name="question5"  placeholder="out of 5" readonly>
+      </div>
+      <div class="form-group">
+        <label for="question6">6. Were you satisfied with the diversity and inclusiveness of &nbsp;&nbsp;&nbsp;the campus community?</label>
+        <input type="radio" id="question6" name="question6" readonly>Yes
+        <input type="radio" id="question6" name="question6" readonly>No
+      </div>
+        <div class="form-group">
+        <label for="question7">7. Give rating for hostel facility?</label>
+        <br><input type="text" id="question7" name="question7"  placeholder="out of 5" readonly>
+      </div>
+      <div class="form-group">
+        <label for="question8">8. How would you rate the overall campus facilities, including &nbsp;&nbsp;&nbsp;dormitories, dining halls, and recreational spaces?</label>
+        <br><input type="text" id="question8" name="question8" placeholder="out of 5" readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="question9">9. Will you recommend this college to others?</label><br>
+        <select style="height: 30px;"  id="question9" name="question9" aria-readonly="true">
+          <option aria-readonly="true">very likely</option>
+          <option aria-readonly="true">likely</option>
+          <option  aria-readonly="true">unlikely</option>
+          <option  aria-readonly="true">very unlikely</option>
+        </select>
+      </div>
+
+      <div class="form-group"><br>
+        <label for="question10">10.Please provide us with additional feedback on areas that &nbsp;&nbsp;&nbsp;&nbsp;need improvement .</label>
+        <textarea rows="10"  id="question10" name="question10" readonly></textarea>
+      </div>
+ <center> <a href="{{url_for('time')}}"> <button type="button" id="preview-btn">back</button></a></center>
+      </form>
+    </div>
+  </body>
+  </html>

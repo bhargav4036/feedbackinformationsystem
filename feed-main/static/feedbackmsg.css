@@ -1,0 +1,29 @@
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color:rgb(137, 231, 168)
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .options {
+    margin-top: 20px;
+  }
+  
+  .options a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #ff0004;
+  }
+  
+  .options a:hover {
+    text-decoration: underline;
+  }
+  

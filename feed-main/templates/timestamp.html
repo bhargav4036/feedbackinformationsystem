@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form</title>
+  <style>
+    body {
+        background-color: aqua;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: fit-content;
+      background-color: rgb(240, 119, 6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 20px;
+      
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      
+    }
+
+    #preview-btn {
+      background-color: #748dd3;
+      color: white;
+      margin-right: 10px;
+      
+    }
+
+    #submit-btn {
+      background-color: #19d869;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+   
+    <form method="POST">
+      <div class="form-group" >
+        <label for="timestamp">Timestamp:</label>
+        <input type="number" id="timestamp" name="timestamp">
+      </div>
+      <div class="buttons">
+       <a href="{{url_for('sfeed')}}"> <button type="button" id="preview-btn">Preview</button></a>
+        <button type="submit" id="submit-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    // JavaScript functionality can be added here
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='table.css')}}">
+    <title>Document</title>
+    <style>
+    .navbar {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar .left-links {
+  display: flex;
+}
+
+.navbar .right-links {
+  display: flex;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left-links">
+          <a href="#">Hello {{session.get('user')}}</a>
+          <a href="{{url_for('home')}}">Home</a>
+        </div>
+        <div class="right-links">
+          <a href="{{url_for('logout')}}">Logout</a>
+        </div>
+      </div>
+    
+
+    <table>
+        <thead>
+            <tr>
+                <th>survey id</th>
+                <th>url</th>
+                <th>timestamp</th>  
+                <th>download</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data1 %}                  
+            <tr> 
+                <td>{{i[0]}}</td>
+                <td><a href="{{i[1]}}">{{i[1]}}</a></td>
+                <td>{{i[2]}}</td>
+                <td><a href="{{url_for('getdata',nid=i[0])}}">get survey data</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
+

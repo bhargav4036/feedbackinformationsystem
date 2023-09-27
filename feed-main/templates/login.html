@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      
+  
+  background-image: url('https://toplinemanagement.com/wp-content/uploads/2017/01/top-line-management-login-background-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+
+
+    }
+    
+    .container {
+      width: 400px;
+      height:300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #9a4d0ebb;
+      border-width: 5px;
+      border-radius: 20px;
+      align-items: center;
+      margin-top:250px;
+      
+    }
+    
+    .container h1 {
+      text-align: center;
+    }
+    
+    .container input[type="text"],
+    .container input[type="password"] {
+      width: 95%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .container input[type="submit"] {
+      width: 50%;
+      padding: 10px 20px;
+      background-color: #af874cad;
+      color: rgb(18, 18, 18);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: medium;
+      text-align: center;
+      margin-left: 90px;
+    }
+    
+    .container input[type="submit"]:hover {
+      background-color: #7a540ed7;
+      align-items: center;
+    
+    }
+    
+    .container .signup {
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .container .forgot-password {
+      text-align: center;
+      margin-top: 10px;
+
+    }
+
+  </style>
+</head>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <center><b>{{message}}</b></center>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form method="post">
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <input type="submit" value="Login">
+    </form>
+    <div class="signup">
+      <a href="{{url_for('registration')}}">Sign up</a>
+    </div>
+    <div class="forgot-password">
+      <a href="{{url_for('forgot')}}">Forgot password?</a>
+    </div>
+  </div>
+</body>
+</html>
+

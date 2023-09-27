@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Confirmation</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='feedbackmsg.css')}}">
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+  <div class="container">
+    <h2>Thank You</h2>
+    <p>You have successfully given your feedback.</p>
+    
+  </div>
+</body>
+</html>
